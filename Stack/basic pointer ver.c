@@ -55,27 +55,37 @@ StackItem Pop(Stack S) {
 void StackFree(Stack S) {
     free(S);
 }
-int main() {
-    char str[100];
-    scanf("%s", str);
-    slink ss = StackInit(51);
-    int n = strlen(str);
-    for (int i = 0; i <= n; i++)
-    {
-        if (str[i-1]=='(') 
-        {
-            Push(i, ss);
-        } else if (str[i-1]==')')
-        {
-            if(StackEmpty(ss))
-                printf("位置%d 处的右括号不匹配\n", i);
-                else
-                    printf("%d %d \n", Pop(ss), i);
-        }
-    }
+// int main() {
+//     char str[100];
+//     scanf("%s", str);
+//     Stack ss = StackInit();
+//     int n = strlen(str);
+//     for (int i = 0; i <= n; i++)
+//     {
+//         if (str[i-1]=='(') 
+//         {
+//             Push(i, ss);
+//         } else if (str[i-1]==')')
+//         {
+//             if(StackEmpty(ss))
+//                 printf("位置%d 处的右括号不匹配\n", i);
+//                 else
+//                     printf("%d %d \n", Pop(ss), i);
+//         }
+//     }
 
-    while (!StackEmpty(ss))
+//     while (!StackEmpty(ss))
+//     {
+//         printf("位置%d 处的左括号不匹配\n",Pop(ss));
+//     }
+// }
+int main()
+{
+    Stack ss = StackInit();
+    for (int i = 0; i < 10; i++)
     {
-        printf("位置%d 处的左括号不匹配\n",Pop(ss));
+        Push(i, ss);
     }
+    printf("%d", Pop(ss));
+    printf("%d", ss->top->element);
 }

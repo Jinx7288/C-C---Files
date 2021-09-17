@@ -18,11 +18,11 @@ int Suornot(int n)
     }
     return 1;
 }
+int anss[100000];
 int main()
 {
     int totalTime;
     scanf("%d", &totalTime);
-    int anss[100000];
     for (int i = 0; i < totalTime; i++)
     {
         int in;
@@ -39,7 +39,7 @@ int main()
             {
                 left -= 1;
             }
-            while (!Suornot(right))
+            while (!Suornot(right))  
             {
                 right += 1;
             }
