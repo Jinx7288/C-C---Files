@@ -62,25 +62,28 @@ int main()
 {
     Stack ss = StackInit();
     int n,temp;
+    int cache;
     scanf("%d", &n);
     for (int i = 0; i < n; i++)
     {
         scanf("%d", &temp);
         if (StackEmpty(ss))
         {
-            Push(temp,i,ss);
+            Push(temp, i, ss);
         } else
         {
-            while (StackTop(ss)<temp)
+            while (!StackEmpty(ss) && StackTop(ss)<=temp)
             {
-                ans[Pop(ss)] = i;
+                cache = Pop(ss);
+                ans[cache] = i;
             }
             Push(temp, i, ss);
         }
     }
     while (!StackEmpty(ss))
     {
-        ans[Pop(ss)] = -1;
+        cache = Pop(ss);
+        ans[cache] = -1;
     }
     for (int i = 0; i < n; i++)
     {

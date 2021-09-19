@@ -8,8 +8,7 @@ int main()
     {
         scanf("%d", &s[i]);
     }
-    int *p;
-    p = s;
+    int *p=s;
     int flag = 1;
     for (int i = 0; i < n; i++)
     {
