@@ -2,16 +2,10 @@
 #include<stdio.h>
 #include<stdlib.h>
 int main(){
-    int a = 100;
-    char s[a];
-    scanf("%s",s);
-    char *delim = " ";
-    char *p;
-    printf("%s", strtok(s, delim));
-    while((p = strtok(NULL, delim)))
+    char incache[20];
+    while (scanf("%s",incache))
     {
-        printf("%s ", p);
-        printf("\n");
+        printf("%s\n", incache);
     }
     return 0;
 }

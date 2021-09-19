@@ -4,8 +4,6 @@
 
 int main()
 {
-    while (/* condition */)
-    {
-        /* code */
-    }
+    
+    return 0;
 }

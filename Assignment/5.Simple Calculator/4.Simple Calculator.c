@@ -56,10 +56,10 @@ char *Pop(Stack S) {
 }
 void StackFree(Stack S) { free(S); }
 int main() {
-    char inlstr[220];
-    char laterstr[220];
+    char inlstr[220]="";
+    char laterstr[220]="";
     Stack sk = StackInit();
-    Push("#",-1, sk);
+    // Push("#",-1, sk);
     gets(inlstr);
     int n = strlen(inlstr);
     for (int i = 0; i < n; i++)
@@ -72,34 +72,36 @@ int main() {
     // printf("%s", inlstr);
     char *delim = "_";
     char *p;
-    char firststr[20];
-    char temp2[2];
-    strcpy(firststr, strtok(inlstr, delim));
-    // printf("%s\n", firststr);
+    char firststr[20]="";
+    char temp2[2]="";
+    char cache[20] = "";
+    p = strtok(inlstr, delim);
+    strcpy(firststr,p);
     strcat(firststr, " ");
-    // printf("%s\n", firststr);
     strcat(laterstr, firststr);
+    // printf("%s\n", firststr);
     while((p = strtok(NULL, delim)))
     {
+        strcpy(cache, p);
         // printf("%s\n", p);
-        if (strcmp(p, "+") != 0 && strcmp(p, "-") != 0 && strcmp(p, "*") != 0 && strcmp(p, "/") != 0)
+        if (strcmp(cache, "+") != 0 && strcmp(cache, "-") != 0 && strcmp(cache, "*") != 0 && strcmp(cache, "/") != 0)
         {
-            strcat(p, " ");
-            strcat(laterstr, p);
+            strcat(cache, " ");
+            strcat(laterstr, cache);
         }
-        // printf("%s", p);
-        if (strcmp(p,"+")==0 || strcmp(p,"-")==0)
+        // printf("%s", cache);
+        if (strcmp(cache,"+")==0 || strcmp(cache,"-")==0)
         {
-            if (StackTop(sk)==2)
+            if (!StackEmpty(sk) && StackTop(sk)==2)
             {
                 strcpy(temp2, Pop(sk));
                 strcat(laterstr, temp2);
             }
-            Push(p, 1, sk);
+            Push(cache, 1, sk);
         }
-        if (strcmp(p,"*")==0 || strcmp(p,"/")==0)
+        if (strcmp(cache,"*")==0 || strcmp(cache,"/")==0)
         {
-            Push(p, 2, sk);
+            Push(cache, 2, sk);
         }
     }
     char temp[2];
