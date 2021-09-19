@@ -73,7 +73,7 @@ int main() {
     char *delim = "_";
     char *p;
     char firststr[20]="";
-    char temp2[2]="";
+    char temp2[10]="";
     char cache[20] = "";
     p = strtok(inlstr, delim);
     strcpy(firststr,p);
@@ -95,12 +95,19 @@ int main() {
             if (!StackEmpty(sk) && StackTop(sk)==2)
             {
                 strcpy(temp2, Pop(sk));
+                strcat(temp2, " ");
                 strcat(laterstr, temp2);
             }
             Push(cache, 1, sk);
         }
         if (strcmp(cache,"*")==0 || strcmp(cache,"/")==0)
         {
+            if (!StackEmpty(sk) && StackTop(sk)==2)
+            {
+                strcpy(temp2, Pop(sk));
+                strcat(temp2, " ");
+                strcat(laterstr, temp2);
+            }
             Push(cache, 2, sk);
         }
     }
