@@ -6,7 +6,7 @@ typedef int StackItemValue;
 typedef double CalItem;
 typedef struct snode *slink;
 typedef struct snode{
-    StackItem element[2];
+    StackItem element[10];
     StackItemValue value;
     CalItem calvalue;
     slink next;
@@ -82,9 +82,14 @@ int dig2str(char *s)
     return sum;
 }
 void StackFree(Stack S) { free(S); }
+char inlstr[240]="";
+char laterstr[240]="";
+char firststr[20]="";
+char temp2[40]="";
+char cache[40] = "";
+
 int main() {
-    char inlstr[220]="";
-    char laterstr[220]="";
+    
     Stack sk = StackInit();
     // Push("#",-1, sk);
     gets(inlstr);
@@ -99,9 +104,7 @@ int main() {
     // printf("%s", inlstr);
     char *delim = "_";
     char *p;
-    char firststr[20]="";
-    char temp2[10]="";
-    char cache[20] = "";
+    
     p = strtok(inlstr, delim);
     strcpy(firststr,p);
     strcat(firststr, "_");
@@ -119,7 +122,7 @@ int main() {
         // printf("%s", cache);
         if (strcmp(cache,"+")==0 || strcmp(cache,"-")==0)
         {
-            if (!StackEmpty(sk) && StackTop(sk)==2)
+            if (!StackEmpty(sk) && (StackTop(sk)==2 || StackTop(sk)==1))
             {
                 strcpy(temp2, Pop(sk));
                 strcat(temp2, "_");
@@ -147,8 +150,8 @@ int main() {
         // strcat(instr, Pop(sk));
         strcat(laterstr, temp);
     }
-    StackFree(sk);
-    // printf("%s\n", laterstr);
+    // StackFree(sk);
+    printf("%s\n", laterstr);
     p = strtok(laterstr, delim);
     Stack cal = StackInit();
     char *ccc = p;
@@ -176,7 +179,7 @@ int main() {
             {
                 dca1 = Pop2(cal);
                 dca2 = Pop2(cal);
-                Push2(dca1 - dca2,cal);
+                Push2(dca2 - dca1,cal);
             }
             if (strcmp(cache,"*")==0)
             {
