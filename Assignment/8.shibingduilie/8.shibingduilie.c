@@ -5,16 +5,15 @@ int process(int m)
 {
     int temp = m;
     int count = m;
-
-    for (int i = 0; i < m; i++)
+    for (int i = 1; i < m+1; i++)
     {
         a[i] = i;
         b[i] = 1;
     }
-    while (temp>3)
+    while (count>3)
     {
         temp = count;
-        for (int i = 1,k=0; i < temp+1; i++)
+        for (int i = 1,k=1; i < temp+1; i++)
         {
             if (i%2==0)
             {
@@ -26,7 +25,18 @@ int process(int m)
                 ++k;
             }
         }
-        for (int i = 1,k=0; i < temp+1; i++)
+        temp = count;
+        // printf("%d\n", count);
+        // for (int i = 0; i < m; i++)
+        // {
+        //     printf("%d ", a[i+1]);
+        //     // printf("%d ", b[i]);
+        // }
+        if (count<=3)
+        {
+            break;
+        }
+        for (int i = 1,k=1; i < temp+1; i++)
         {
             if (i%3==0 && b[a[i]]==1)
             {
@@ -38,10 +48,22 @@ int process(int m)
                 ++k;
             }
         }
+        //  printf("%d\n", count);
+        // for (int i = 0; i < m; i++)
+        // {
+        //     printf("%d ", a[i+1]);
+        // // printf("%d ", b[i]);
+        // }
+
     }
-    for (int i = 0; i < temp; i++)
+    for (int i = 1; i <=count; i++)
     {
-        printf("%d", a[i]);
+        if (i==count)
+        {
+            printf("%d\n", a[i]);
+            break;
+        }    
+        printf("%d ", a[i]);
     }
     return 0;
 }
