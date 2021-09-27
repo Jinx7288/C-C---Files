@@ -1,11 +1,7 @@
-#include<string.h>
 #include<stdio.h>
-#include<stdlib.h>
-int main(){
-    char incache[20];
-    while (scanf("%s",incache))
-    {
-        printf("%s\n", incache);
-    }
+int main()
+{
+    int m = 7;
+    printf("%d", m % 2 == 0 ? m / 2 : m / 2 + 1);
     return 0;
 }

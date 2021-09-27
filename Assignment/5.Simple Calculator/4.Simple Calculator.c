@@ -151,7 +151,7 @@ int main() {
         strcat(laterstr, temp);
     }
     // StackFree(sk);
-    printf("%s\n", laterstr);
+    // printf("%s\n", laterstr);
     p = strtok(laterstr, delim);
     Stack cal = StackInit();
     char *ccc = p;
