@@ -43,7 +43,13 @@ int main()
             } else
             {
                 cache[li[i]] += 1;
-                cache[last] -= 1;
+                if (cache[last]>0)
+                {
+                    cache[last] -= 1;
+                } else
+                {
+                    
+                }
             }
         } else
         {
