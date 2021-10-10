@@ -136,7 +136,7 @@ int main()
                     }
                     if(n-temp<left.number) 
                         left = rightgo(left);
-                    if(n-temp>right.number)
+                    if(temp>right.number)
                         right = leftgo(right);
                 }
                 odd = odd == 1 ? 0 : 1;

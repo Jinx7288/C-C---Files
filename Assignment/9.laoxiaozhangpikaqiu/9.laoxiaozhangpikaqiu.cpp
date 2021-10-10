@@ -1,6 +1,5 @@
 #include<cstdio>
 #include<algorithm>
-#include<stack>
 using namespace std;
 int li[1000];
 int main()
