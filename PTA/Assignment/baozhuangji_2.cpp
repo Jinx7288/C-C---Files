@@ -4,7 +4,7 @@
 #include<stack>
 #include<stdio.h>
 using namespace std;
-int ind[110];
+int ind[110]={0};
 char tdl[110][1010];
 int main()
 {
@@ -38,7 +38,7 @@ int main()
             continue;
         } else
         {
-            if (stk.size()==(long long unsigned)s)
+            if (stk.size()==(long long unsigned)s && ind[temp]!=m)
             {
                 printf("%c", stk.top());
                 stk.pop();
