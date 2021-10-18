@@ -14,7 +14,7 @@ int main()
         if (ca[templ-1]==0&&ca[tempr+1]==0)
         {
             printf("ACCEPTED\n");
-            for (int i = templ; i < tempr; i++)
+            for (int i = templ; i <= tempr; i++)
             {
                 ca[i] = 1;
             }
