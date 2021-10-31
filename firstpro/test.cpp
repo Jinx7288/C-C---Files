@@ -1,6 +1,7 @@
 #include<cstdio>
+#include<string>
 using namespace std;
 int main()
 {
-    printf("%d", 7 / 2);
+    
 }

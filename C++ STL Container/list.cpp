@@ -19,7 +19,8 @@ int main()
     lst1.end();                            //返回尾值的迭代器
     lst1.clear();                      //清空值
     bool isEmpty1 = lst1.empty();          //判断为空
-    lst1.erase(lst1.begin(),lst1.end());                        //删除元素
+    lst1.erase(lst1.begin(),lst1.end());
+    lst1.erase(lst1.begin());          //删除元素
     lst1.front();                      //返回第一个元素的引用
     lst1.back();                       //返回最后一个元素的引用
     lst1.insert(lst1.begin(),3,2);         //从指定位置插入个3个值为2的元素
@@ -34,5 +35,10 @@ int main()
     for(list<int>::const_iterator iter = lst1.begin();iter != lst1.end();iter++)
     {
        cout<<*iter;
+    }  // ! 只读迭代器
+    for (list<int>::iterator iter = lst1.begin();iter != lst1.end(); iter++)
+    {
+        *iter = 10;
     }
+    
 }
