@@ -14,6 +14,7 @@ int main()
     q.empty();  //判断队列是否为空，为空返回true，否则返回false 
     q.size(); // !返回队列中元素的个数
     q.top(); // ! 返回优先级最高的元素
+    q.emplace();
     q.push(item); // !在队尾加入新元素item
     q.pop(); // !删除队首元素，但不返回其值
     // q.emplace(q.back(),20);
