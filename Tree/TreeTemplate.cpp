@@ -24,7 +24,7 @@ void MakeTree(TreeItem x,BinaryTree T,BinaryTree L,BinaryTree R)
 	T->root->element=x;
 	T->root->left=L->root;
 	T->root->right=R->root;
-	L->root=R->root=0; // ? 这里是啥意思
+	L->root=R->root=0; 
 }
 TreeItem BreakTree(BinaryTree T,BinaryTree L,BinaryTree R)
 {
