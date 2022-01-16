@@ -11,7 +11,6 @@ int main()
     deque<int> vec3(vec1.begin(),vec1.end());
     deque<int> vec4(10);
     deque<int> vec5(10,4);
-
     vec1.push_back(100); //尾部添加元素
     int size = vec1.size();   //元素个数
     bool isEmpty = vec1.empty(); //判断是否为空
@@ -23,11 +22,9 @@ int main()
     deque<int>::iterator iter2 = vec1.begin();    // ! 获取迭代器首地址
     deque<int>::const_iterator c_iter = vec1.begin();   // !获取const类型迭代器
     vec1.clear();// !清空元素
-
     sort(vec1.begin(), vec1.end());
     reverse(vec1.begin(), vec1.end());
     find(vec1.begin(), vec2.end(), 10); // ! 找10返回下标
-
     int length = vec1.size();
     for(int i=0;i<length;i++)
     {
